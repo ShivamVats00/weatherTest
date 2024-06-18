@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: background-change 10s ease-in-out infinite alternate; /* Background animation */
+}
+
+@keyframes background-change {
+  from {
+    background-color: #f0f0f0;
+  }
+  to {
+    background-color: #e0e0e0;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: form-pop 0.5s ease-in-out forwards; /* Form pop animation */
+}
+
+@keyframes form-pop {
+  from {
+    transform: scale(0.9); /* Scale down initially */
+    opacity: 0; /* Initially invisible */
+  }
+  to {
+    transform: scale(1); /* Scale up to normal size */
+    opacity: 1; /* Become fully visible */
+  }
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 200px;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out; /* Button color transition */
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9; /* Darker blue on hover (unchanged) */
+}
+
+body {
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+}
