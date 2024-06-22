@@ -1,15 +1,48 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-<link rel="stylesheet" href="style.css">
     <title>Weather App</title>
   </head>
   <body>
-    <form class="" action="/" method="post">
+    <form id="myForm" action="/" method="post">
       <label for="cityInput">City Name: </label>
-      <input id="cityInput" type="text" name="cityName" >
+      <input id="cityInput" type="text" name="cityName">
       <button type="submit">Go</button>
     </form>
 
+    <p id="temperature"></p>
+    <p id="description"></p>
+    <img id="weatherIcon" src="">
+
+    <script>
+      document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const cityName = document.getElementById("cityInput").value;
+        fetchWeatherData(cityName);
+      });
+
+      function fetchWeatherData(city) {
+        const apiKey = "53c1f01e7ebe94741d7f0a3c16a3b396";y
+        const unit = "metric";
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            const temp = data.main.temp;
+            const description = data.weather[0].description;
+            const icon = data.weather[0].icon;
+            const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+
+            // Update the UI elements using DOM manipulation
+            document.getElementById("temperature").textContent = `The temperature in ${city} is ${temp}°C`;
+            document.getElementById("description").textContent = `The weather is currently ${description}`;
+            document.getElementById("weatherIcon").src = imageURL;
+          })
+          .catch(error => console.error(error));
+      }
+    </script>
   </body>
 </html>
