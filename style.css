@@ -6,7 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  animation: background-change 10s ease-in-out infinite alternate; /* Background animation */
+  animation: background-change 10s ease-in-out infinite alternate;
 }
 
 @keyframes background-change {
@@ -26,17 +26,17 @@ form {
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  animation: form-pop 0.5s ease-in-out forwards; /* Form pop animation */
+  animation: form-pop 0.5s ease-in-out forwards;
 }
 
 @keyframes form-pop {
   from {
-    transform: scale(0.9); /* Scale down initially */
-    opacity: 0; /* Initially invisible */
+    transform: scale(0.9);
+    opacity: 0;
   }
   to {
-    transform: scale(1); /* Scale up to normal size */
-    opacity: 1; /* Become fully visible */
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -60,11 +60,11 @@ button[type="submit"] {
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out; /* Button color transition */
+  transition: background-color 0.2s ease-in-out;
 }
 
 button[type="submit"]:hover {
-  background-color: #2980b9; /* Darker blue on hover (unchanged) */
+  background-color: #2980b9; 
 }
 
 body {
